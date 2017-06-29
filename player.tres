@@ -1,0 +1,6 @@
+[gd_resource type="MaterialShader" format=1]
+
+[resource]
+
+_code = { "fragment":"uniform texture TEXTURE;\nvec4 col = tex(TEXTURE, UV);\n/*\nif(col.rgb == vec3(1,1,1)) {\n    col.a = 0;\n}\n\nDIFFUSE_ALPHA = col;\n*/\n\nif(col.x > 0.5 && col.y > 0.5 && col.z > 0.5) {\n    col.a = 0;\n}\nDIFFUSE_ALPHA = col;\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
